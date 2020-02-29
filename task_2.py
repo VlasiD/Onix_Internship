@@ -15,7 +15,7 @@ def bubble_sorting(catalog):
 
 # create numerical and string variables
 number = 11
-string = 'This is string'
+string = 'This is a string'
 
 # compare types of variables
 print(type(number) == type(string))
