@@ -94,14 +94,13 @@ months.pop(2)
 print(months)
 
 # get all keys and all values
-list_keys = list(months.keys())
-print(list_keys)
-list_values = list(months.values())
-print(list_values)
+print(months.keys())
+print(months.values())
 
-# sort lists
-list_keys.sort()
-print(list_keys)
-list_values.sort()
-print(list_values)
+# sort dict by keys
+sorted_months_by_key = dict(sorted(months.items(), key=lambda entry: entry[0]))
+print(sorted_months_by_key)
 
+# sort dict by values
+sorted_months_by_value = dict(sorted(months.items(), key=lambda entry: entry[1]))
+print(sorted_months_by_value)
