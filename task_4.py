@@ -1,11 +1,12 @@
 import math
 from functools import reduce
 
+
 class Number:
-    "Responsible for creating an object that stores a number"
-    def __init__(self, number):
+    """Responsible for creating an object that stores a number"""
+    def __init__(self, num):
         """Object initialization"""
-        self.number = number
+        self.num = num
         print("The object of {} is created!".format(self.__class__))
 
     def __del__(self):
@@ -18,7 +19,7 @@ class Number:
         :param divisor: the number divided by the first number
         :return: True if the given number is divisible without remainder by given divisor or False if is not
         """
-        return self.number % divisor == 0
+        return self.num % divisor == 0
 
     @staticmethod
     def static_method(num1, num2):
@@ -36,9 +37,10 @@ class Checker(Number):
     """Class inherited from Number Class"""
     _info = "I'm protected variable from Checker."
 
-    def __init__(self, obj):
+    def __init__(self, num):
         """Object initialization"""
-        self.obj = obj
+        super().__init__(num)
+        self.obj = num
         print("The object of {} is created!".format(self.__class__))
 
     def __is_string(self):
@@ -58,6 +60,10 @@ class Checker(Number):
 
 class Mathematics(Number):
     """Class inherited from Number Class"""
+    def __init__(self, num):
+        """Object initialization"""
+        super().__init__(num)
+
     @staticmethod
     def static_method(num1, num2):
         """
@@ -102,12 +108,10 @@ if __name__ == '__main__':
     # Use reduce to print the product of these numbers
     my_numbers = [4, 6, 9, 23, 5]
 
-
-    # Fix all three respectively.
-    map_result = list(map(lambda x: math.round(x**2), my_floats))
+    map_result = list(map(lambda x: round(x**2, 2), my_floats))
     filter_result = list(filter(lambda name: len(name) <= 7, my_names))
-    reduce_result = reduce(lambda num1, num2: num1 * num2, my_numbers, 0)
+    reduce_result = reduce(lambda num1, num2: num1 * num2, my_numbers)
 
     print(map_result)
     print(filter_result)
-    # print(reduce_result)
+    print(reduce_result)
