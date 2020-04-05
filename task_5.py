@@ -18,12 +18,9 @@ print("Hours:", str_date_time.hour)
 print("Minutes:", str_date_time.minute)
 
 # generates 3 random numbers which are divisible by 5
-counter = 0
-while counter < 3:
-    num = random.randint(100, 999)
-    if num % 5 == 0:
-        print("Generated number is divisible by 5:", num)
-        counter += 1
+nums = [random.randrange(100, 999, 5) for i in range(3)]
+print("Generated number is divisible by 5:")
+print(nums)
 
 # generates string from 10 random characters
 characters = string.printable
