@@ -1,0 +1,5 @@
+﻿create database locations_db;
+use locations_db;
+create user 'locations_user'@'localhost' identified by '12345678';
+grant all privileges on locations_db.* to locations_user@localhost;
+flush privileges;
