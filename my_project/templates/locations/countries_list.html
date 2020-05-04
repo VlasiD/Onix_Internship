@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %} Countries {% endblock %}
+
+{% block content %}
+<div style="padding-left: 20px; padding-top: 10px">
+    <h5>List of countries:</h5>
+    <table border="1" cellpadding="1" cellspacing="1" style="width:550px">
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Population (mln)</th>
+            <th>Cities count</th>
+            <th>Flag</th>
+        </tr>
+
+        {% for item in countries %}
+        <tr>
+            <td><a href="http://127.0.0.1:8000/country={{item.name}}">{{item.name}}</a></td>
+            <td>{{item.description|truncatechars:20}}</td>
+            <td align="center">{{item.population}}</td>
+            <td align="center">{{item.cities_count}}</td>
+            <td><img src="media/{{item.flag}}" width="100"></td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

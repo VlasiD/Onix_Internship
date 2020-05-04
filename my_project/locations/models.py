@@ -8,6 +8,9 @@ class Symbol(models.Model):
     """Response for creating Symbol table"""
     image = models.ImageField()
 
+    def __str__(self):
+        return self.image.name
+
 
 class Country(models.Model):
     """Response for creating County table"""
