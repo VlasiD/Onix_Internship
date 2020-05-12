@@ -5,6 +5,9 @@
 {% block content %}
 <div style="padding-left: 20px; padding-top: 10px">
     <h5>List of countries:</h5>
+    <div style="padding-bottom: 15px">
+        <a class="btn btn-primary" style="color: white" href="{% url 'create_country' %}">Add+</a>
+    </div>
     <table border="1" cellpadding="1" cellspacing="1" style="width:550px">
         <tr>
             <th>Name</th>
@@ -16,11 +19,13 @@
 
         {% for item in countries %}
         <tr>
-            <td><a href="http://127.0.0.1:8000/country={{item.name}}">{{item.name}}</a></td>
+            <td><a href="{% url 'cities_list' id=item.id %}">{{item.name}}</a></td>
             <td>{{item.description|truncatechars:20}}</td>
             <td align="center">{{item.population}}</td>
             <td align="center">{{item.cities_count}}</td>
             <td><img src="media/{{item.flag}}" width="100"></td>
+            <td style="width: 50px"><a class="btn btn-primary" style="color: white"
+                                       href="{% url 'edit_country' id=item.id %}">Edit</a></td>
         </tr>
         {% endfor %}
     </table>

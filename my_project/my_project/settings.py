@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'locations.apps.LocationsConfig',
     'crispy_forms',
+    'bootstrap4',
+    'django_forms_bootstrap',
 ]
 
 MIDDLEWARE = [
@@ -49,6 +51,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'my_project.middleware.CountriesDisplaying'
 ]
 
 ROOT_URLCONF = 'my_project.urls'

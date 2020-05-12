@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+
+{% block title %} New country {% endblock %}
+
+{% block content %}
+<div style="padding-left: 20px; padding-top: 10px">
+    <h3>New country</h3>
+        <form method="POST" class="post-form" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div style="width: 400px">{% bootstrap_form form %}</div>
+
+            <button type="submit" class="btn-primary">Save</button>
+        </form>
+</div>
+{% endblock %}

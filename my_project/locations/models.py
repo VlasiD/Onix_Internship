@@ -24,7 +24,7 @@ class Country(models.Model):
     cities_count = models.IntegerField(default=0)
     # create connection to Symbol table
     flag = models.OneToOneField(Symbol, on_delete=models.CASCADE)
-    users = models.ManyToManyField(settings.AUTH_USER_MODEL)
+    user = models.ManyToManyField(settings.AUTH_USER_MODEL)
 
     def __str__(self):
         return self.name

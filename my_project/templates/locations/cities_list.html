@@ -4,10 +4,13 @@
 
 {% block content %}
 <div style="padding-left: 20px; padding-top: 10px">
-    <h5>Cities of {{ cities.first.country }}:</h5>
+    <h5>Cities of {{ country.name }}:</h5>
+    <div style="padding-bottom: 15px">
+        <a class="btn btn-primary" style="color: white" href="{% url 'create_city' %}">Add+</a>
+    </div>
     <ul>
-        {% for item in cities %}
-        <li><a href="http://127.0.0.1:8000/city={{item.name}}">{{item.name}}</a></li>
+        {% for city in country.city_set.all %}
+        <li><a href="{% url 'city' id=city.id%}">{{city.name}}</a></li>
         {% endfor %}
     </ul>
 </div>

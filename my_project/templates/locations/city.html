@@ -13,11 +13,14 @@
             <th>Latitude</th>
         </tr>
         <tr>
-            <td><a href="http://127.0.0.1:8000/country={{city.country}}">{{city.country}}</a></td>
+            <td><a href="{% url 'cities_list' id=city.country.id %}">{{city.country}}</a></td>
             <td>{{city.name}}</td>
             <td align="center">{{city.longitude}}</td>
-            <td align="center">{{city.latitude}}
-            <td style="width: 50px"><a class="btn badge-danger" style="color: white" href="http://127.0.0.1:8000/delete={{city.name}}">Delete</a></td>
+            <td align="center">{{city.latitude}}</td>
+            <td style="width: 50px"><a class="btn btn-primary" style="color: white"
+                                       href="{% url 'edit_city' id=city.id %}">Edit</a></td>
+            <td style="width: 50px"><a class="btn badge-danger" style="color: white"
+                                       href="{% url 'delete_city' id=city.id %}">Delete</a></td>
         </tr>
     </table>
 </div>
