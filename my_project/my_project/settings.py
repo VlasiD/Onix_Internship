@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'crispy_forms',
     'bootstrap4',
     'django_forms_bootstrap',
+    'rest_framework',
+    'locations_api'
 ]
 
 MIDDLEWARE = [
@@ -133,3 +135,11 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 LOGIN_REDIRECT_URL = '/'
+
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
+}
