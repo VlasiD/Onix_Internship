@@ -17,15 +17,10 @@ from django.conf.urls import url
 from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.static import static
-from rest_framework.routers import SimpleRouter
-from locations_api import views
 from . import settings
 
-router = SimpleRouter()
-router.register('countries', views.CountryView)
-
 urlpatterns = [
-    path('api/', include(router.urls)),
+    path('api/', include('locations_api.urls')),
     path('', include('locations.urls')),
     path('admin/', admin.site.urls),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
