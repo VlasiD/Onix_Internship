@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'bootstrap4',
     'django_forms_bootstrap',
     'rest_framework',
-    'locations_api'
+    'locations_api',
+    'django_filters'
 ]
 
 MIDDLEWARE = [
